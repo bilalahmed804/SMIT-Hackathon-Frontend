@@ -1,0 +1,203 @@
+/* Dashboard Container */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f59e0b; /* Custom color */
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-image {
+  border-radius: 50%;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  width: 250px;
+  background-color: #343a40;
+  color: white;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Full height */
+}
+
+.dashboard-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard-sidebar ul li {
+  margin: 1rem 0;
+}
+
+.dashboard-sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.dashboard-sidebar ul li a:hover {
+  color: #f59e0b; /* Highlight color on hover */
+}
+
+/* Main Content */
+.dashboard-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-x: auto; /* Add horizontal scroll for small screens */
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.card p {
+  margin: 0.5rem 0 0;
+  font-size: 1.5rem;
+  color: #f59e0b; /* Custom color */
+}
+
+/* Table */
+.recent-applications {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recent-applications h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* Laptop Screens */
+  .dashboard-sidebar {
+    width: 200px; /* Reduce sidebar width */
+  }
+
+  .dashboard-content {
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust card size */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Tablets */
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+    height: auto; /* Auto height for mobile */
+    padding: 1rem 0;
+    position: relative; /* Remove sticky */
+  }
+
+  .dashboard-sidebar ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .dashboard-sidebar ul li {
+    margin: 0;
+  }
+
+  .dashboard-content {
+    padding: 1rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Smaller cards */
+  }
+
+  table {
+    display: block;
+    overflow-x: auto; /* Add horizontal scroll for tables */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile Devices */
+  .dashboard-header h1 {
+    font-size: 1.25rem; /* Smaller header text */
+  }
+
+  .user-profile span {
+    display: none; /* Hide welcome text on small screens */
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Even smaller cards */
+  }
+
+  table th,
+  table td {
+    padding: 0.5rem; /* Reduce table padding */
+  }
+}

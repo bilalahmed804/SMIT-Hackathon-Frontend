@@ -1,0 +1,80 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f59e0b; /* Custom color */
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  .navbar-logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  /* Desktop Menu */
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-menu li {
+    margin-left: 1.5rem;
+  }
+  
+  .navbar-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-menu li a:hover {
+    color: #f0f0f0; /* Lighten color on hover */
+  }
+  
+  /* Mobile Menu Button */
+  .navbar-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Mobile Menu Styles */
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none; /* Hide desktop menu on small screens */
+      flex-direction: column;
+      background-color: #f59e0b; /* Match navbar color */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 1rem 0;
+    }
+  
+    .navbar-menu.active {
+      display: flex; /* Show mobile menu when active */
+    }
+  
+    .navbar-menu li {
+      margin: 0;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+  
+    .navbar-toggle {
+      display: block; /* Show toggle button on small screens */
+    }
+  }
